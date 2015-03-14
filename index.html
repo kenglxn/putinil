@@ -27,9 +27,11 @@
     </div>
     <script type="text/javascript">
       (function () {
-        var txt = location.search.replace('?', '');
+        var dTxt, txt = location.search.replace('?', '');
         txt = txt.replace('+', ' ');
-        document.getElementById('htext').innerHTML = decodeURIComponent(txt);
+        dTxt = decodeURIComponent(txt);
+        document.querySelector('#htext').innerHTML = dTxt;
+        document.querySelector('title').innerHTML = dTxt;
       }());
     </script>
   </body>

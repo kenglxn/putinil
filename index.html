@@ -5,19 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script type="text/javascript">
-      var parseTxt = function () {
-        var txt = location.search.replace('?', ''), dTxt = decodeURIComponent(txt);
-
-        dTxt = dTxt.replace(/\+/g, ' ');
-        return dTxt;
-      };
-    </script>
-
-    <script type="text/javascript">
-      // hack: set title with write so parsers will be able to read it on social media post shares
-      document.write('<title>' + parseTxt() + '</title>');
-    </script>
+    <title>hehehe...</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/site.css" rel="stylesheet">
@@ -39,7 +27,11 @@
     </div>
     <script type="text/javascript">
       (function () {
-        document.querySelector('#htext').innerHTML = parseTxt();
+        var txt = location.search.replace('?', ''),
+            dTxt = decodeURIComponent(txt);
+        dTxt = dTxt.replace(/\+/g, ' ');
+        document.querySelector('title').innerHTML = dTxt;
+        document.querySelector('#htext').innerHTML = dTxt;
       }());
     </script>
   </body>

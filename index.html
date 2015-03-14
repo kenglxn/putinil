@@ -27,9 +27,9 @@
     </div>
     <script type="text/javascript">
       (function () {
-        var dTxt, txt = location.search.replace('?', '');
-        txt = txt.replace('+', ' ');
-        dTxt = decodeURIComponent(txt);
+        var txt = location.search.replace('?', ''), dTxt = decodeURIComponent(txt);
+
+        dTxt = dTxt.replace(/\+/g, ' ');
         document.querySelector('#htext').innerHTML = dTxt;
         document.querySelector('title').innerHTML = dTxt;
       }());

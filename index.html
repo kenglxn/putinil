@@ -26,7 +26,11 @@
       </div>
     </div>
     <script type="text/javascript">
-        document.getElementById('htext').innerHTML = decodeURIComponent(location.search.replace('?', ''));
+      (function () {
+        var txt = location.search.replace('?', '');
+        txt = txt.replace('+', ' ');
+        document.getElementById('htext').innerHTML = decodeURIComponent(txt);
+      }());
     </script>
   </body>
 </html>

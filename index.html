@@ -30,8 +30,10 @@
         var txt = location.search.replace('?', ''),
             dTxt = decodeURIComponent(txt);
         dTxt = dTxt.replace(/\+/g, ' ');
-        document.querySelector('title').innerHTML = dTxt;
-        document.querySelector('#htext').innerHTML = dTxt;
+	if (dTxt.length > 0) {
+          document.querySelector('title').innerHTML = dTxt;
+          document.querySelector('#htext').innerHTML = dTxt;
+        }
       }());
     </script>
   </body>
